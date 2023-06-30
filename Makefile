@@ -11,6 +11,9 @@ bench: $(SRC) $(DATA)
 bench-all: $(SRC) $(DATA)
 	cargo run --release --all-features -- --out=out.csv $(DATA)
 
+bench-asp: $(SRC) $(DATA)
+	cargo run --release --features "asp" -- --out=out.csv $(DATA)
+
 test:
 	cargo test --release
 
