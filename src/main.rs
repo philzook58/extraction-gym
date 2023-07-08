@@ -57,6 +57,8 @@ fn main() {
 
             for (ext_name, extractor) in &extractors {
                 let start_time = std::time::Instant::now();
+                let msg = format!("Starting {filename:40}, {ext_name:10}",);
+                log::info!("{}", msg);
                 let result = extractor.extract(&egraph, &egraph.roots);
                 let elapsed = start_time.elapsed();
                 for &root in &egraph.roots {
